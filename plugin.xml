@@ -7,15 +7,9 @@
     <name>Actioncable WebSockets Extension</name>
     <description>Cordova Actioncanble Extension</description>
 
-    <!-- android -->
-    <platform name="android">
-    </platform>
-
-    <!-- ios -->
-    <platform name="ios">
-    </platform>
-   
-    <!-- browser -->
-    <platform name="browser">
-    </platform>
+           <js-module src="actioncable-headers-extension.js" name="plugin">
+                      <runs/>
+                      <clobbers target="ActionCable" />
+                      </js-module>
+           
 </plugin>
