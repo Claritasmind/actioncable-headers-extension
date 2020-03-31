@@ -19,13 +19,17 @@
                 },
                 WebSocket: window.WebSocket,
                 logger: window.console,
-                createConsumer: function (url, headers) {
+                zone: null,
+                createConsumer: function (url, headers, zone = null) {
                     var ref;
                     if (url == null) {
                         url = (ref = this.getConfig("url")) != null ? ref : this.INTERNAL.default_mount_path;
                     }
                     if (headers == null) {
                         headers = this.INTERNAL.headers;
+                    }
+                    if (zone) {
+                        this.zone = zone;
                     }
                     return new ActionCable.Consumer(this.createWebSocketURL(url), headers);
                 },
@@ -249,7 +253,17 @@
                         }
 
                         this.webSocket = new ActionCable.WebSocket(this.consumer.url, headers);
-                        this.installEventHandlers();
+                        
+                        if (ActionCable.zone && ActionCable.zone.runOutsideAngular) {
+                          var installEventsFn = function() {
+                            this.installEventHandlers();
+                          }
+
+                          ActionCable.zone.runOutsideAngular(installEventsFn.bind(this));
+                        }
+                        else {
+                         this.installEventHandlers();   
+                        }
                         this.monitor.start();
                         return true;
                     }
