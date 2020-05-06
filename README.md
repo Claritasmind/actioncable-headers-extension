@@ -1,4 +1,6 @@
 # Action Cable – Integrated WebSockets for Rails extended to support additional headers on Sec-WebSocket-Protocol
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMindSciences%2Factioncable-headers-extension.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMindSciences%2Factioncable-headers-extension?ref=badge_shield)
+
 
 Action Cable seamlessly integrates WebSockets with the rest of your Rails application.
 It allows for real-time features to be written in Ruby in the same style
@@ -551,6 +553,9 @@ Action Cable is released under the MIT license:
 
 * https://opensource.org/licenses/MIT
 
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMindSciences%2Factioncable-headers-extension.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMindSciences%2Factioncable-headers-extension?ref=badge_large)
 
 ## Support
 
