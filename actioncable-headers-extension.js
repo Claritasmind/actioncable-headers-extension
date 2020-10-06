@@ -11,7 +11,8 @@
                         "welcome": "welcome",
                         "ping": "ping",
                         "confirmation": "confirm_subscription",
-                        "rejection": "reject_subscription"
+                        "rejection": "reject_subscription",
+                        "disconnect": "disconnect"
                     },
                     "default_mount_path": "/cable",
                     "protocols": ["actioncable-v1-json", "actioncable-unsupported"],
@@ -367,6 +368,8 @@
                                 return this.subscriptions.notify(identifier, "connected");
                             case message_types.rejection:
                                 return this.subscriptions.reject(identifier);
+                            case message_types.disconnect:
+                                return this.close();
                             default:
                                 return this.subscriptions.notify(identifier, "received", message);
                         }
