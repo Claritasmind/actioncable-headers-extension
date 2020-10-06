@@ -1,6 +1,6 @@
 {
   "name": "actioncable-headers-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Action Cable – Integrated WebSockets for Rails extended to support additional headers on Sec-WebSocket-Protocol",
   "main": "actioncable-headers-extension.js",
   "scripts": {
